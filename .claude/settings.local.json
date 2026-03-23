@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebFetch(domain:growfood.pro)",
+      "Bash(npm install:*)",
+      "Bash(npx shadcn@latest init -d --force)",
+      "Bash(npx shadcn@2.5.0 init -d --force)"
+    ]
+  }
+}
