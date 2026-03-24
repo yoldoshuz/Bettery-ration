@@ -1,0 +1,119 @@
+{
+  "nav": {
+    "home": "Bosh sahifa",
+    "menu": "Menyu",
+    "about": "Biz haqimizda",
+    "recipes": "Retseptlar",
+    "contact": "Aloqa",
+    "cart": "Savat",
+    "language": "Til"
+  },
+  "brands": {
+    "title": "Kompaniyalar oilasi",
+    "numaFamily": "Numa Family",
+    "numaKids": "Numa Kids",
+    "numaNutrition": "Numa Nutrition",
+    "nabaviyTabobat": "Nabaviy Tabobat",
+    "betteryRestaurant": "Bettery Restaurant",
+    "betteryRation": "Bettery Ration"
+  },
+  "hero": {
+    "title": "Har bir tarelkada sog'lom energiya zaryadi",
+    "subtitle": "Yangi, muvozanatli taomlar sizning stolingizga yetkazib beriladi. Ortiqcha harakatlarsiz to'g'ri ovqatlaning.",
+    "cta": "Menyuni ko'rish",
+    "badge": "Sog'lom ovqatlanish"
+  },
+  "promo": {
+    "title": "Istaklaringizni qondiring, byudjetingizni saqlang!",
+    "description": "Ortiqcha xarajatlarsiz sevimli taomlaringizdan bahramand bo'ling. Byudjetingizni tartibda saqlab, mazali taomlar bilan o'zingizni erkalang.",
+    "cta": "Maxsus takliflarni ko'rish"
+  },
+  "menus": {
+    "title": "Bizning sog'lom menyu",
+    "subtitle": "Ehtiyotkorlik bilan tayyorlangan taomlarimizni kashf eting",
+    "viewAll": "Hammasini ko'rish"
+  },
+  "featured": {
+    "title": "Avokado va aralash salat bilan losos",
+    "description": "Mukammal sog'lom tushlik uchun avokado va yangi salat aralashmasi bilan tayyorlangan yangi losos.",
+    "orderNow": "Hozir buyurtma bering",
+    "badge": "Avokado"
+  },
+  "categories": {
+    "title": "Eng yaxshi kategoriyalar",
+    "subtitle": "Bizda bor",
+    "all": "Hammasi",
+    "popular": "Mashhur",
+    "lowCalorie": "Kam kaloriyali",
+    "seeRecipe": "Retseptni ko'rish"
+  },
+  "cta": {
+    "title": "Tanangizni ozuqaviy taomlar bilan to'ldiring",
+    "button": "Menyuni ko'rish"
+  },
+  "recipes": {
+    "title": "Mashhur sog'lom retseptlar",
+    "daysAgo": "{days} kun oldin",
+    "by": "Muallif: {author}"
+  },
+  "footer": {
+    "address": "Toshkent sh., Navoiy ko'ch., 123",
+    "phone": "+998 71 123 45 67",
+    "rights": "© 2024 Bettery Ration. Barcha huquqlar himoyalangan.",
+    "home": "Bosh sahifa",
+    "about": "Biz haqimizda",
+    "menu": "Menyu",
+    "contact": "Aloqa",
+    "help": "Yordam",
+    "support": "Qo'llab-quvvatlash",
+    "policies": "Siyosat",
+    "shop": "Do'kon"
+  },
+  "about": {
+    "title": "Bettery Ration haqida",
+    "subtitle": "Biz ilhomlantiradigan sog'lom ovqatlanishni yaratamiz",
+    "story": "Bizning hikoyamiz",
+    "storyText": "Bettery Ration — hamfikrlar jamoasi tomonidan yaratilgan sog'lom ovqatlanish xizmati. Biz to'g'ri ovqatlanish mazali, arzon va qulay bo'lishi mumkinligiga ishonamiz. Har bir taom professional dietologlar va oshpazlar tomonidan ishlab chiqilgan.",
+    "mission": "Bizning missiyamiz",
+    "missionText": "Sog'lom ovqatlanishni hamma uchun qulay qilish. Biz faqat yangi, tabiiy ingredientlardan foydalanamiz va sizning sog'lig'ingiz haqida g'amxo'rlik bilan tayyorlaymiz.",
+    "values": "Bizning qadriyatlarimiz",
+    "freshness": "Yangilik",
+    "freshnessText": "Har kuni faqat yangi ingredientlar",
+    "quality": "Sifat",
+    "qualityText": "Har bir bosqichda yuqori standartlar",
+    "care": "G'amxo'rlik",
+    "careText": "Har bir mijozga individual yondashuv"
+  },
+  "menuPage": {
+    "title": "Bizning menyu",
+    "subtitle": "Sog'lom ovqatlanish uchun taomlarni tanlang",
+    "addToCart": "Savatga",
+    "added": "Qo'shildi",
+    "calories": "kkal",
+    "categories": {
+      "all": "Hammasi",
+      "salads": "Salatlar",
+      "bowls": "Boullar",
+      "soups": "Sho'rvalar",
+      "drinks": "Ichimliklar"
+    }
+  },
+  "cartPage": {
+    "title": "Savat",
+    "empty": "Savatingiz bo'sh",
+    "emptyDescription": "Buyurtmani boshlash uchun menyudan taom qo'shing",
+    "goToMenu": "Menyuga o'tish",
+    "total": "Jami",
+    "checkout": "Buyurtmani rasmiylashtirish",
+    "remove": "O'chirish",
+    "quantity": "Miqdor",
+    "clearAll": "Hammasini tozalash",
+    "orderSuccess": "Buyurtma rasmiylashtirildi!",
+    "orderSuccessDescription": "Buyurtmangiz uchun rahmat. Biz siz bilan tez orada bog'lanamiz.",
+    "name": "Ism",
+    "phone": "Telefon",
+    "address": "Yetkazib berish manzili",
+    "comment": "Izoh",
+    "placeOrder": "Buyurtma berish"
+  }
+}

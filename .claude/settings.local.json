@@ -4,7 +4,14 @@
       "WebFetch(domain:growfood.pro)",
       "Bash(npm install:*)",
       "Bash(npx shadcn@latest init -d --force)",
-      "Bash(npx shadcn@2.5.0 init -d --force)"
+      "Bash(npx shadcn@2.5.0 init -d --force)",
+      "Bash(npx shadcn@latest add sheet button tooltip badge card separator tabs dialog scroll-area -y)",
+      "Bash(mkdir -p messages)",
+      "Bash(mkdir -p app/[locale]/menu)",
+      "Bash(mkdir -p app/[locale]/about)",
+      "Bash(mkdir -p app/[locale]/recipes)",
+      "Bash(mkdir -p app/[locale]/cart)",
+      "Bash(npx next:*)"
     ]
   }
 }

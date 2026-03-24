@@ -1,0 +1,119 @@
+{
+  "nav": {
+    "home": "Home",
+    "menu": "Menu",
+    "about": "About",
+    "recipes": "Recipes",
+    "contact": "Contact",
+    "cart": "Cart",
+    "language": "Language"
+  },
+  "brands": {
+    "title": "Family of Companies",
+    "numaFamily": "Numa Family",
+    "numaKids": "Numa Kids",
+    "numaNutrition": "Numa Nutrition",
+    "nabaviyTabobat": "Nabaviy Tabobat",
+    "betteryRestaurant": "Bettery Restaurant",
+    "betteryRation": "Bettery Ration"
+  },
+  "hero": {
+    "title": "Healthy energy boost in every plate",
+    "subtitle": "Fresh, balanced meals delivered to your table. Eat right without the extra effort.",
+    "cta": "Explore the menu",
+    "badge": "Healthy eating"
+  },
+  "promo": {
+    "title": "Feed Your Desires, Save Your Wallet!",
+    "description": "Enjoy the flavors you crave without the guilt of overspending. Treat yourself to delicious meals while keeping your budget in check.",
+    "cta": "See special offers"
+  },
+  "menus": {
+    "title": "Our Healthy Menus",
+    "subtitle": "Discover our carefully crafted dishes",
+    "viewAll": "View all"
+  },
+  "featured": {
+    "title": "Salmon Fish With Avocado And Mixed Salad",
+    "description": "Fresh salmon prepared with avocado and a fresh mix of salads for the perfect healthy lunch.",
+    "orderNow": "Order Now",
+    "badge": "Avocado"
+  },
+  "categories": {
+    "title": "Best Categories",
+    "subtitle": "We Have",
+    "all": "All",
+    "popular": "Popular",
+    "lowCalorie": "Low Calorie",
+    "seeRecipe": "See Recipe"
+  },
+  "cta": {
+    "title": "Fuel your body with nutrient-rich meals",
+    "button": "Explore menu"
+  },
+  "recipes": {
+    "title": "Famous Healthy Recipes",
+    "daysAgo": "{days} days ago",
+    "by": "By {author}"
+  },
+  "footer": {
+    "address": "123 Navoi St, Tashkent",
+    "phone": "+998 71 123 45 67",
+    "rights": "© 2024 Bettery Ration. All rights reserved.",
+    "home": "Home",
+    "about": "About",
+    "menu": "Menu",
+    "contact": "Contact",
+    "help": "Help",
+    "support": "Support",
+    "policies": "Policies",
+    "shop": "Shop"
+  },
+  "about": {
+    "title": "About Bettery Ration",
+    "subtitle": "We create healthy food that inspires",
+    "story": "Our Story",
+    "storyText": "Bettery Ration is a healthy eating service created by a team of like-minded people. We believe that proper nutrition can be delicious, affordable, and convenient. Every dish is developed by professional dietitians and chefs.",
+    "mission": "Our Mission",
+    "missionText": "Making healthy food accessible to everyone. We use only fresh, natural ingredients and cook with care for your health.",
+    "values": "Our Values",
+    "freshness": "Freshness",
+    "freshnessText": "Only fresh ingredients every day",
+    "quality": "Quality",
+    "qualityText": "High standards at every stage",
+    "care": "Care",
+    "careText": "Individual approach to every customer"
+  },
+  "menuPage": {
+    "title": "Our Menu",
+    "subtitle": "Choose dishes for healthy eating",
+    "addToCart": "Add to Cart",
+    "added": "Added",
+    "calories": "kcal",
+    "categories": {
+      "all": "All",
+      "salads": "Salads",
+      "bowls": "Bowls",
+      "soups": "Soups",
+      "drinks": "Drinks"
+    }
+  },
+  "cartPage": {
+    "title": "Cart",
+    "empty": "Your cart is empty",
+    "emptyDescription": "Add dishes from the menu to start your order",
+    "goToMenu": "Go to menu",
+    "total": "Total",
+    "checkout": "Checkout",
+    "remove": "Remove",
+    "quantity": "Quantity",
+    "clearAll": "Clear all",
+    "orderSuccess": "Order placed!",
+    "orderSuccessDescription": "Thank you for your order. We will contact you shortly.",
+    "name": "Name",
+    "phone": "Phone",
+    "address": "Delivery address",
+    "comment": "Comment",
+    "placeOrder": "Place order"
+  }
+}
