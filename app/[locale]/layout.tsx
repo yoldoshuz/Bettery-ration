@@ -9,23 +9,29 @@ import "../globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Bettery Ration — Здоровое питание с доставкой",
+    default: "Bettery Ration — Toshkentda sog'lom ovqat yetkazish",
     template: "%s | Bettery Ration",
   },
   description:
-    "Bettery Ration — сервис здорового питания. Свежие, сбалансированные блюда с доставкой к вашему столу.",
+    "Bettery Ration — Toshkentda sog'lom ovqatlanish xizmati. Tayyor ratsionlarni har kuni uyingizgacha yetkazib beramiz. 1000-2500 Kkal ratsionlar, bepul yetkazib berish.",
   keywords: [
+    "sog'lom ovqatlanish",
+    "ovqat yetkazish",
+    "Toshkent",
+    "bettery ration",
+    "ratsion",
+    "dietik ovqat",
     "здоровое питание",
     "доставка еды",
-    "bettery",
-    "рацион",
-    "диетическое питание",
     "Ташкент",
+    "healthy food delivery",
+    "Tashkent",
+    "meal prep",
   ],
   openGraph: {
     type: "website",
-    title: "Bettery Ration",
-    description: "Заряд здоровой энергии в каждой тарелке",
+    title: "Bettery Ration — Sog'lom ovqat yetkazish xizmati",
+    description: "Toshkentda tayyor sog'lom ratsionlar. 1000-2500 Kkal. Bepul yetkazib berish.",
     siteName: "Bettery Ration",
   },
 };

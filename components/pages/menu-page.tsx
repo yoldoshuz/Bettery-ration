@@ -34,7 +34,9 @@ export function MenuPage() {
         : item.description;
 
   const formatPrice = (price: number) =>
-    new Intl.NumberFormat("ru-RU").format(price);
+    new Intl.NumberFormat("uz-UZ").format(price);
+
+  const currency = locale === "en" ? "sum" : locale === "uz" ? "so'm" : "сум";
 
   const handleAddToCart = (item: (typeof menuItems)[0]) => {
     addItem({
@@ -57,14 +59,14 @@ export function MenuPage() {
   };
 
   return (
-    <div className="pt-16">
+    <div className="pt-20 lg:pt-24">
       {/* Page Header */}
-      <section className="bg-bettery-dark py-12 lg:py-16">
+      <section className="bg-gray-50 py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-5xl font-bold text-white mb-3"
+            className="text-4xl sm:text-5xl font-bold text-gray-900 mb-3"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t("title")}
@@ -73,7 +75,7 @@ export function MenuPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-white/70 text-lg"
+            className="text-gray-500 text-lg"
           >
             {t("subtitle")}
           </motion.p>
@@ -81,7 +83,7 @@ export function MenuPage() {
       </section>
 
       {/* Category Tabs */}
-      <section className="sticky top-16 lg:top-20 z-30 bg-white/95">
+      <section className="sticky top-14 lg:top-24 z-30 bg-white/95 backdrop-blur-sm border-b border-gray-100">
         <div className="mx-auto max-w-7xl px-4 xl:px-0">
           <div className="flex gap-2 py-4 overflow-x-auto scrollbar-hide">
             {categories.map((cat) => (
@@ -90,7 +92,7 @@ export function MenuPage() {
                 onClick={() => setActiveCategory(cat)}
                 className={`px-5 py-2 rounded-full text-sm font-medium transition-all whitespace-nowrap ${
                   activeCategory === cat
-                    ? "bg-bettery-dark text-white"
+                    ? "bg-bettery-green text-white"
                     : "bg-gray-100 text-gray-600 hover:bg-gray-200"
                 }`}
               >
@@ -113,8 +115,8 @@ export function MenuPage() {
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.95 }}
                   transition={{ delay: index * 0.05 }}
-                  whileHover={{ y: -5 }}
-                  className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100"
+                  whileHover={{ y: -4 }}
+                  className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100"
                 >
                   <div className="relative h-48 sm:h-52">
                     <Image
@@ -134,12 +136,13 @@ export function MenuPage() {
                     <h3 className="font-semibold text-gray-900 mb-1 line-clamp-1">
                       {getName(item)}
                     </h3>
-                    <p className="text-gray-500 text-sm mb-3 line-clamp-2">
+                    <p className="text-gray-400 text-sm mb-3 line-clamp-2">
                       {getDesc(item)}
                     </p>
                     <div className="flex items-center justify-between">
-                      <span className="text-bettery-dark font-bold text-lg">
-                        {formatPrice(item.price)} <span className="text-sm font-normal">сум</span>
+                      <span className="text-gray-900 font-bold text-lg">
+                        {formatPrice(item.price)}{" "}
+                        <span className="text-sm font-normal text-gray-400">{currency}</span>
                       </span>
                       <Button
                         size="sm"
@@ -147,7 +150,7 @@ export function MenuPage() {
                         className={`rounded-full transition-all ${
                           addedItems.has(item.id)
                             ? "bg-bettery-green hover:bg-bettery-green"
-                            : "bg-bettery-dark hover:bg-bettery-green"
+                            : "bg-gray-900 hover:bg-bettery-green"
                         } text-white`}
                       >
                         {addedItems.has(item.id) ? (

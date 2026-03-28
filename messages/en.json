@@ -6,7 +6,9 @@
     "recipes": "Recipes",
     "contact": "Contact",
     "cart": "Cart",
-    "language": "Language"
+    "language": "Language",
+    "phone": "+998 71 200 00 01",
+    "order": "Order now"
   },
   "brands": {
     "title": "Family of Companies",
@@ -18,78 +20,160 @@
     "betteryRation": "Bettery Ration"
   },
   "hero": {
-    "title": "Healthy energy boost in every plate",
-    "subtitle": "Fresh, balanced meals delivered to your table. Eat right without the extra effort.",
-    "cta": "Explore the menu",
-    "badge": "Healthy eating"
+    "title": "Healthy eating — simple and delicious",
+    "subtitle": "We deliver ready-made meal plans right to your door in Tashkent. You choose — we cook!",
+    "cta": "View menu",
+    "badge": "#1 healthy food delivery in Tashkent"
   },
-  "promo": {
-    "title": "Feed Your Desires, Save Your Wallet!",
-    "description": "Enjoy the flavors you crave without the guilt of overspending. Treat yourself to delicious meals while keeping your budget in check.",
-    "cta": "See special offers"
+  "benefits": {
+    "lightness": {
+      "title": "Lightness",
+      "desc": "Feel light and energized every day"
+    },
+    "freedom": {
+      "title": "Freedom",
+      "desc": "No more thinking about cooking or grocery shopping"
+    },
+    "calm": {
+      "title": "Peace of mind",
+      "desc": "Calorie counting and diet planning is on us"
+    },
+    "pleasure": {
+      "title": "Pleasure",
+      "desc": "New delicious and healthy dishes every day"
+    }
   },
-  "menus": {
-    "title": "Our Healthy Menus",
-    "subtitle": "Discover our carefully crafted dishes",
-    "viewAll": "View all"
+  "plans": {
+    "title": "Choose your menu",
+    "subtitle": "Select a meal plan that fits your goal",
+    "active": "For an active lifestyle and staying in shape",
+    "perDay": "per day",
+    "from": "from",
+    "kcal": "Kcal",
+    "days": "days",
+    "meals": "meals",
+    "proteins": "Proteins",
+    "fats": "Fats",
+    "carbs": "Carbs",
+    "orderPlan": "Order now"
   },
-  "featured": {
-    "title": "Salmon Fish With Avocado And Mixed Salad",
-    "description": "Fresh salmon prepared with avocado and a fresh mix of salads for the perfect healthy lunch.",
-    "orderNow": "Order Now",
-    "badge": "Avocado"
+  "pricing": {
+    "title": "Order Bettery Ration at the best price",
+    "subtitle": "Order more — save more",
+    "trialTitle": "Trial period",
+    "trialDesc": "3 days — try for the first time",
+    "weekTitle": "Weekly",
+    "weekDesc": "6 days — most popular option",
+    "monthTitle": "Monthly",
+    "monthDesc": "24 days — best value price",
+    "pricePerDay": "per day",
+    "totalPrice": "Total",
+    "sum": "sum",
+    "savings": "you save",
+    "freeDelivery": "Free delivery",
+    "orderNow": "Order now",
+    "popular": "Popular"
   },
-  "categories": {
-    "title": "Best Categories",
-    "subtitle": "We Have",
-    "all": "All",
-    "popular": "Popular",
-    "lowCalorie": "Low Calorie",
-    "seeRecipe": "See Recipe"
+  "results": {
+    "title": "Bettery Ration — real results",
+    "subtitle": "Over 10,000 people have already reached their goals",
+    "months": "mo",
+    "startWeight": "Starting weight",
+    "endWeight": "Current weight",
+    "program": "Program",
+    "lost": "Lost",
+    "kg": "kg"
   },
-  "cta": {
-    "title": "Fuel your body with nutrient-rich meals",
-    "button": "Explore menu"
+  "delivery": {
+    "title": "Free delivery",
+    "subtitle": "Free delivery across Tashkent",
+    "description": "Free delivery available across Tashkent city and nearby areas. We deliver your order every morning from 7:00 to 10:00.",
+    "zones": "Delivery zones",
+    "orderBtn": "Order now"
   },
-  "recipes": {
-    "title": "Famous Healthy Recipes",
-    "daysAgo": "{days} days ago",
-    "by": "By {author}"
+  "faq": {
+    "title": "Frequently asked questions",
+    "tabs": {
+      "general": "General",
+      "ordering": "Ordering",
+      "menu": "Menu",
+      "delivery": "Delivery",
+      "payment": "Payment"
+    },
+    "questions": {
+      "q1": "What is Bettery Ration?",
+      "a1": "Bettery Ration is a healthy meal delivery service in Tashkent. We deliver ready-made meals tailored to your goals every day right to your door.",
+      "q2": "What meal plans are available?",
+      "a2": "We offer 4 main plans: 1000, 1500, 1700 and 2500 Kcal. Each plan is designed by a professional dietitian.",
+      "q3": "How can I place an order?",
+      "a3": "You can order through our website or by calling +998 71 200 00 01.",
+      "q4": "When is delivery made?",
+      "a4": "Orders are delivered daily in the morning from 7:00 to 10:00. Delivery across Tashkent is free.",
+      "q5": "How can I pay?",
+      "a5": "You can pay with cash, card (Uzcard, Humo), bank transfer, or via Click/Payme."
+    }
+  },
+  "quality": {
+    "title": "Quality and Safety",
+    "subtitle": "Bettery Ration",
+    "description": "All our meals are prepared in accordance with HACCP safety standards. We use only fresh and natural ingredients.",
+    "cta": "Learn more",
+    "cert1": "HACCP Certified",
+    "cert2": "Natural ingredients",
+    "cert3": "Freshly prepared daily"
+  },
+  "discount": {
+    "title": "Order Bettery Ration at a great price!",
+    "subtitle": "On your first order",
+    "percent": "20%",
+    "off": "discount",
+    "cta": "Order now"
   },
   "footer": {
     "address": "123 Navoi St, Tashkent",
-    "phone": "+998 71 123 45 67",
-    "rights": "© 2024 Bettery Ration. All rights reserved.",
+    "phone": "+998 71 200 00 01",
+    "rights": "© 2025 Bettery Ration. All rights reserved.",
     "home": "Home",
     "about": "About",
     "menu": "Menu",
     "contact": "Contact",
     "help": "Help",
     "support": "Support",
-    "policies": "Policies",
-    "shop": "Shop"
+    "policies": "Privacy Policy",
+    "shop": "Shop",
+    "workHours": "Working hours: 08:00 — 22:00",
+    "followUs": "Follow us"
   },
   "about": {
     "title": "About Bettery Ration",
-    "subtitle": "We create healthy food that inspires",
+    "subtitle": "Healthy meal delivery service in Tashkent",
     "story": "Our Story",
-    "storyText": "Bettery Ration is a healthy eating service created by a team of like-minded people. We believe that proper nutrition can be delicious, affordable, and convenient. Every dish is developed by professional dietitians and chefs.",
+    "storyText": "Bettery Ration was founded in 2023 in Tashkent. We strive to make healthy eating accessible and delicious for everyone. Our team of professional chefs and dietitians serves over 500 clients daily.",
     "mission": "Our Mission",
-    "missionText": "Making healthy food accessible to everyone. We use only fresh, natural ingredients and cook with care for your health.",
+    "missionText": "To develop a culture of healthy eating in Uzbekistan. We use only fresh, local, and natural ingredients. Every meal is prepared with care.",
     "values": "Our Values",
     "freshness": "Freshness",
-    "freshnessText": "Only fresh ingredients every day",
+    "freshnessText": "We cook daily using only fresh ingredients",
     "quality": "Quality",
-    "qualityText": "High standards at every stage",
+    "qualityText": "We operate according to HACCP standards",
     "care": "Care",
-    "careText": "Individual approach to every customer"
+    "careText": "Individual approach to every client",
+    "stats": {
+      "clients": "500+",
+      "clientsLabel": "Daily clients",
+      "dishes": "50+",
+      "dishesLabel": "Dishes on menu",
+      "experience": "3+",
+      "experienceLabel": "Years of experience"
+    }
   },
   "menuPage": {
     "title": "Our Menu",
-    "subtitle": "Choose dishes for healthy eating",
+    "subtitle": "Choose delicious and healthy dishes",
     "addToCart": "Add to Cart",
     "added": "Added",
     "calories": "kcal",
+    "currency": "sum",
     "categories": {
       "all": "All",
       "salads": "Salads",
@@ -108,12 +192,22 @@
     "remove": "Remove",
     "quantity": "Quantity",
     "clearAll": "Clear all",
-    "orderSuccess": "Order placed!",
-    "orderSuccessDescription": "Thank you for your order. We will contact you shortly.",
-    "name": "Name",
-    "phone": "Phone",
+    "orderSuccess": "Order accepted!",
+    "orderSuccessDescription": "Thank you! Our operator will contact you shortly.",
+    "name": "Your name",
+    "phone": "Phone number",
     "address": "Delivery address",
-    "comment": "Comment",
-    "placeOrder": "Place order"
+    "comment": "Comment (optional)",
+    "placeOrder": "Place order",
+    "currency": "sum"
+  },
+  "recipesPage": {
+    "title": "Healthy Recipes",
+    "subtitle": "A collection of healthy eating recipes"
+  },
+  "recipes": {
+    "title": "Healthy Recipes",
+    "daysAgo": "{days} days ago",
+    "by": "By {author}"
   }
 }

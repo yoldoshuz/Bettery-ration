@@ -5,7 +5,7 @@ import Image from "next/image";
 import { useTranslations, useLocale } from "next-intl";
 import { Link, usePathname, useRouter } from "@/i18n/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { ShoppingCart, Menu, Globe, ChevronDown, Minus, Plus, Trash2 } from "lucide-react";
+import { ShoppingCart, Menu, Globe, ChevronDown, Minus, Plus, Trash2, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Sheet,
@@ -24,15 +24,6 @@ import {
 } from "@/components/ui/select";
 import { useCartStore } from "@/lib/stores/cart-store";
 
-const brandLinks = [
-  { name: "numaFamily", href: "#" },
-  { name: "numaKids", href: "#" },
-  { name: "numaNutrition", href: "#" },
-  { name: "nabaviyTabobat", href: "#" },
-  { name: "betteryRestaurant", href: "#" },
-  { name: "betteryRation", href: "#" },
-];
-
 const navLinks = [
   { key: "home", href: "/" },
   { key: "menu", href: "/menu" },
@@ -42,7 +33,6 @@ const navLinks = [
 
 export function Header() {
   const t = useTranslations("nav");
-  const tBrands = useTranslations("brands");
   const tCart = useTranslations("cartPage");
   const locale = useLocale();
   const pathname = usePathname();
@@ -52,8 +42,6 @@ export function Header() {
   const [cartOpen, setCartOpen] = useState(false);
   const [langOpen, setLangOpen] = useState(false);
   const [mounted, setMounted] = useState(false);
-  const [brandsOpen, setBrandsOpen] = useState(false);
-  const brandsRef = useRef<HTMLDivElement>(null);
   const langRef = useRef<HTMLDivElement>(null);
 
   const items = useCartStore((s) => s.items);
@@ -69,7 +57,6 @@ export function Header() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  // Close language dropdown on outside click
   useEffect(() => {
     const handleClickOutside = (e: MouseEvent) => {
       if (langRef.current && !langRef.current.contains(e.target as Node)) {
@@ -82,20 +69,6 @@ export function Header() {
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, [langOpen]);
 
-  useEffect(() => {
-    const handleClickOutside = (e: MouseEvent) => {
-      if (brandsRef.current && !brandsRef.current.contains(e.target as Node)) {
-        setBrandsOpen(false);
-      }
-    };
-
-    if (brandsOpen) {
-      document.addEventListener("mousedown", handleClickOutside);
-    }
-
-    return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [brandsOpen]);
-
   const switchLocale = (newLocale: string) => {
     router.replace(pathname, { locale: newLocale as "ru" | "en" | "uz" });
     setLangOpen(false);
@@ -104,106 +77,76 @@ export function Header() {
   const localeLabels: Record<string, string> = {
     ru: "Рус",
     en: "Eng",
-    uz: "Uzb",
+    uz: "O'zb",
   };
 
   const formatPrice = (price: number) =>
-    new Intl.NumberFormat("ru-RU").format(price);
+    new Intl.NumberFormat("uz-UZ").format(price);
+
+  const currency = locale === "en" ? "sum" : locale === "uz" ? "so'm" : "сум";
 
   return (
     <motion.header
       initial={{ y: -100 }}
       animate={{ y: 0 }}
-      transition={{ duration: 0.5, ease: "easeOut" }}
-      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${scrolled
-        ? "bg-bettery-dark/95 backdrop-blur-md shadow-lg"
-        : "bg-bettery-dark"
-        }`}
+      transition={{ duration: 0.4, ease: "easeOut" }}
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
+        scrolled
+          ? "bg-white/95 backdrop-blur-md shadow-sm border-b border-gray-100"
+          : "bg-white"
+      }`}
     >
-      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="flex h-16 items-center justify-between lg:h-20">
-          <div
-            ref={brandsRef}
-            className="relative shrink-0"
-            onMouseEnter={() => setBrandsOpen(true)}
-            onMouseLeave={() => setBrandsOpen(false)}
-          >
-            <Link
-              href="/"
-              className="flex items-center gap-2"
-              onClick={(e) => {
-                // мобилка → toggle
-                if (window.innerWidth < 1024) {
-                  e.preventDefault();
-                  setBrandsOpen((prev) => !prev);
-                }
-              }}
-            >
-              <Image
-                src="/logo2.svg"
-                alt="Bettery Ration"
-                width={140}
-                height={40}
-                className="h-8 w-auto lg:h-10"
-                priority
-              />
-            </Link>
-
-            <AnimatePresence>
-              {brandsOpen && (
-                <motion.div
-                  initial={{ opacity: 0, y: 8, scale: 0.95 }}
-                  animate={{ opacity: 1, y: 0, scale: 1 }}
-                  exit={{ opacity: 0, y: 8, scale: 0.95 }}
-                  transition={{ duration: 0.15 }}
-                  className="absolute left-0 top-full mt-2 bg-green-50 p-4 rounded-2xl shadow-xl w-60 z-50"
-                >
-                  <p className="font-semibold text-bettery-dark mb-3 text-sm">
-                    {tBrands("title")}
-                  </p>
-
-                  <div className="space-y-1">
-                    {brandLinks.map((brand) => (
-                      <a
-                        key={brand.name}
-                        href={brand.href}
-                        className="flex items-center gap-2 px-2 py-1.5 rounded-lg text-sm text-gray-600 hover:text-bettery-dark hover:bg-[#f0fdf4] transition-colors"
-                      >
-                        <span className="w-1.5 h-1.5 rounded-full bg-bettery-green" />
-                        {tBrands(brand.name as string)}
-                      </a>
-                    ))}
-                  </div>
-                </motion.div>
-              )}
-            </AnimatePresence>
+      {/* Top bar with phone */}
+      <div className="hidden lg:block bg-bettery-dark">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 flex items-center justify-between h-8">
+          <div className="flex items-center gap-2 text-white/70 text-xs">
+            <Phone className="h-3 w-3" />
+            <span>{t("phone")}</span>
           </div>
+          <div className="text-white/70 text-xs">08:00 — 22:00</div>
+        </div>
+      </div>
 
-          {/* Desktop Nav - center */}
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+        <div className="flex h-14 items-center justify-between lg:h-16">
+          {/* Logo */}
+          <Link href="/" className="shrink-0">
+            <Image
+              src="/logo2.svg"
+              alt="Bettery Ration"
+              width={140}
+              height={40}
+              className="h-7 w-auto lg:h-9"
+              priority
+            />
+          </Link>
+
+          {/* Desktop Nav */}
           <nav className="hidden lg:flex items-center gap-1">
             {navLinks.map((link) => (
               <Link
                 key={link.key}
                 href={link.href}
-                className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-200 ${pathname === link.href
-                  ? "bg-bettery-green text-white shadow-sm"
-                  : "text-white/70 hover:text-white hover:bg-white/10"
-                  }`}
+                className={`px-4 py-2 rounded-full text-sm font-medium transition-all duration-200 ${
+                  pathname === link.href
+                    ? "bg-bettery-green text-white"
+                    : "text-gray-600 hover:text-gray-900 hover:bg-gray-100"
+                }`}
               >
-                {t(link.key as string)}
+                {t(link.key as "home" | "menu" | "about" | "recipes")}
               </Link>
             ))}
           </nav>
 
           {/* Right side */}
-          <div className="flex items-center gap-1.5 lg:gap-3">
+          <div className="flex items-center gap-1.5 lg:gap-2">
             {/* Language Switcher */}
             <div className="relative" ref={langRef}>
               <Button
                 variant="ghost"
                 size="sm"
                 onClick={() => setLangOpen(!langOpen)}
-                className="text-white hover:bg-white/10 hover:text-white gap-1 px-2 lg:px-3 h-9"
+                className="text-gray-600 hover:bg-gray-100 gap-1 px-2 lg:px-3 h-9"
               >
                 <Globe className="h-4 w-4" />
                 <span className="text-sm hidden sm:inline">{localeLabels[locale]}</span>
@@ -216,16 +159,17 @@ export function Header() {
                     animate={{ opacity: 1, y: 0, scale: 1 }}
                     exit={{ opacity: 0, y: -8, scale: 0.95 }}
                     transition={{ duration: 0.15 }}
-                    className="absolute right-0 top-full mt-2 bg-white rounded-xl shadow-2xl py-1.5 min-w-30 z-50 border border-gray-100"
+                    className="absolute right-0 top-full mt-2 bg-white rounded-xl shadow-lg py-1.5 min-w-30 z-50 border border-gray-100"
                   >
                     {Object.entries(localeLabels).map(([code, label]) => (
                       <button
                         key={code}
                         onClick={() => switchLocale(code)}
-                        className={`w-full px-4 py-2 text-left text-sm transition-colors ${locale === code
-                          ? "text-bettery-dark font-semibold bg-[#f0fdf4]"
-                          : "text-gray-600 hover:bg-gray-50"
-                          }`}
+                        className={`w-full px-4 py-2 text-left text-sm transition-colors ${
+                          locale === code
+                            ? "text-bettery-green font-semibold bg-bettery-green/5"
+                            : "text-gray-600 hover:bg-gray-50"
+                        }`}
                       >
                         {label}
                       </button>
@@ -241,7 +185,7 @@ export function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="text-white hover:bg-white/10  hover:text-white relative h-9 w-9"
+                  className="text-gray-600 hover:bg-gray-100 relative h-9 w-9"
                 >
                   <ShoppingCart className="h-5 w-5" />
                   {mounted && getTotalItems() > 0 && (
@@ -257,7 +201,7 @@ export function Header() {
               </SheetTrigger>
               <SheetContent className="px-2 w-full sm:max-w-md bg-white flex flex-col">
                 <SheetHeader>
-                  <SheetTitle className="text-bettery-dark text-xl" style={{ fontFamily: "var(--font-heading)" }}>
+                  <SheetTitle className="text-gray-900 text-xl" style={{ fontFamily: "var(--font-heading)" }}>
                     {tCart("title")}
                   </SheetTitle>
                 </SheetHeader>
@@ -293,7 +237,7 @@ export function Header() {
                             {locale === "en" ? item.nameEn : locale === "uz" ? item.nameUz : item.name}
                           </p>
                           <p className="text-sm text-bettery-green font-semibold">
-                            {formatPrice(item.price)} сум
+                            {formatPrice(item.price)} {currency}
                           </p>
                           <div className="flex items-center gap-2 mt-1.5">
                             <button
@@ -327,12 +271,12 @@ export function Header() {
                   <div className="border-t p-4 mt-4 space-y-4">
                     <div className="flex justify-between items-center">
                       <span className="font-medium text-gray-600">{tCart("total")}:</span>
-                      <span className="text-xl font-bold text-bettery-dark">
-                        {formatPrice(getTotalPrice())} сум
+                      <span className="text-xl font-bold text-gray-900">
+                        {formatPrice(getTotalPrice())} {currency}
                       </span>
                     </div>
                     <Link href="/cart" onClick={() => setCartOpen(false)} className="block">
-                      <Button className="w-full bg-bettery-green hover:bg-[#2ab858] text-white font-semibold py-6 rounded-xl text-base transition-all">
+                      <Button className="w-full bg-bettery-green hover:bg-bettery-green/90 text-white font-semibold py-6 rounded-xl text-base transition-all">
                         {tCart("checkout")}
                       </Button>
                     </Link>
@@ -341,10 +285,10 @@ export function Header() {
               </SheetContent>
             </Sheet>
 
-            {/* Contact Button (desktop) */}
-            <Link href="/about" className="hidden lg:block">
-              <Button className="bg-bettery-green hover:bg-[#2ab858] text-white rounded-full px-6 font-medium h-9 transition-all hover:shadow-lg">
-                {t("contact")}
+            {/* Order Button (desktop) */}
+            <Link href="/menu" className="hidden lg:block">
+              <Button className="bg-bettery-green hover:bg-bettery-green/90 text-white rounded-full px-6 font-medium h-9 transition-all hover:shadow-md">
+                {t("order")}
               </Button>
             </Link>
 
@@ -354,12 +298,12 @@ export function Header() {
                 <Button
                   variant="ghost"
                   size="icon"
-                  className="lg:hidden text-white hover:bg-white/10 h-9 w-9"
+                  className="lg:hidden text-gray-600 hover:bg-gray-100 h-9 w-9"
                 >
                   <Menu className="h-6 w-6" />
                 </Button>
               </SheetTrigger>
-              <SheetContent side="right" className="w-80 bg-green-50 border-0 p-0">
+              <SheetContent side="right" className="w-80 bg-white border-0 p-0">
                 <SheetHeader className="sr-only">
                   <SheetTitle>Menu</SheetTitle>
                 </SheetHeader>
@@ -370,7 +314,7 @@ export function Header() {
                       alt="Bettery Ration"
                       width={160}
                       height={48}
-                      className="h-10 w-auto"
+                      className="h-9 w-auto"
                     />
                   </Link>
 
@@ -380,31 +324,24 @@ export function Header() {
                         key={link.key}
                         href={link.href}
                         onClick={() => setMobileMenuOpen(false)}
-                        className={`px-4 py-3 rounded-xl text-base font-medium transition-all ${pathname === link.href
-                          ? "bg-bettery-green text-black"
-                          : "text-black/70 hover:text-white hover:bg-black/10"
-                          }`}
+                        className={`px-4 py-3 rounded-xl text-base font-medium transition-all ${
+                          pathname === link.href
+                            ? "bg-bettery-green/10 text-bettery-green"
+                            : "text-gray-600 hover:text-gray-900 hover:bg-gray-50"
+                        }`}
                       >
-                        {t(link.key as string)}
+                        {t(link.key as "home" | "menu" | "about" | "recipes")}
                       </Link>
                     ))}
                   </nav>
 
-                  {/* Brand family links */}
-                  {/* <div className="mt-8 border-t border-white/10 pt-6">
-                    <p className="text-black/40 text-xs uppercase tracking-wider mb-3 px-1">
-                      {tBrands("title")}
-                    </p>
-                    {brandLinks.map((brand) => (
-                      <a
-                        key={brand.name}
-                        href={brand.href}
-                        className="block px-1 py-1.5 text-sm text-black/50 hover:text-bettery-green transition-colors"
-                      >
-                        {tBrands(brand.name as string)}
-                      </a>
-                    ))}
-                  </div> */}
+                  {/* Phone */}
+                  <div className="mt-6 px-4">
+                    <a href="tel:+998712000001" className="flex items-center gap-2 text-sm text-gray-500">
+                      <Phone className="h-4 w-4" />
+                      {t("phone")}
+                    </a>
+                  </div>
 
                   <SheetFooter className="mt-auto pb-6">
                     <div className="mt-6">
@@ -427,9 +364,9 @@ export function Header() {
                         </SelectContent>
                       </Select>
                     </div>
-                    <Link href="/about" onClick={() => setMobileMenuOpen(false)}>
-                      <Button className="w-full bg-bettery-green hover:bg-[#2ab858] text-white rounded-xl py-5 font-semibold">
-                        {t("contact")}
+                    <Link href="/menu" onClick={() => setMobileMenuOpen(false)}>
+                      <Button className="w-full bg-bettery-green hover:bg-bettery-green/90 text-white rounded-xl py-5 font-semibold">
+                        {t("order")}
                       </Button>
                     </Link>
                   </SheetFooter>
@@ -439,6 +376,6 @@ export function Header() {
           </div>
         </div>
       </div>
-    </motion.header >
+    </motion.header>
   );
 }

@@ -13,31 +13,31 @@ export function AboutPage() {
       icon: Leaf,
       title: t("freshness"),
       description: t("freshnessText"),
-      color: "bg-green-100 text-green-600",
+      color: "bg-green-50 text-green-600",
     },
     {
       icon: Award,
       title: t("quality"),
       description: t("qualityText"),
-      color: "bg-amber-100 text-amber-600",
+      color: "bg-amber-50 text-amber-600",
     },
     {
       icon: Heart,
       title: t("care"),
       description: t("careText"),
-      color: "bg-rose-100 text-rose-600",
+      color: "bg-rose-50 text-rose-600",
     },
   ];
 
   return (
-    <div className="pt-16">
+    <div className="pt-20 lg:pt-24">
       {/* Page Header */}
-      <section className="bg-bettery-dark py-16 lg:py-24">
+      <section className="bg-gray-50 py-16 lg:py-24">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-white mb-4"
+            className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-4"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t("title")}
@@ -46,10 +46,35 @@ export function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.1 }}
-            className="text-white/70 text-lg max-w-2xl mx-auto"
+            className="text-gray-500 text-lg max-w-2xl mx-auto"
           >
             {t("subtitle")}
           </motion.p>
+        </div>
+      </section>
+
+      {/* Stats */}
+      <section className="py-10 px-4 sm:px-6 lg:px-8 border-b border-gray-100">
+        <div className="mx-auto max-w-7xl">
+          <div className="grid grid-cols-3 gap-4 lg:gap-8">
+            {[
+              { value: t("stats.clients"), label: t("stats.clientsLabel") },
+              { value: t("stats.dishes"), label: t("stats.dishesLabel") },
+              { value: t("stats.experience"), label: t("stats.experienceLabel") },
+            ].map((stat, index) => (
+              <motion.div
+                key={stat.label}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: index * 0.1 }}
+                className="text-center"
+              >
+                <p className="text-3xl sm:text-4xl font-bold text-bettery-green">{stat.value}</p>
+                <p className="text-sm text-gray-500 mt-1">{stat.label}</p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </section>
 
@@ -61,7 +86,7 @@ export function AboutPage() {
               initial={{ opacity: 0, x: -40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative h-80 sm:h-96 lg:h-125 rounded-3xl overflow-hidden"
+              className="relative h-80 sm:h-96 lg:h-[500px] rounded-3xl overflow-hidden"
             >
               <Image
                 src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?w=800&h=600&fit=crop"
@@ -76,12 +101,12 @@ export function AboutPage() {
               viewport={{ once: true }}
             >
               <h2
-                className="text-3xl sm:text-4xl font-bold text-bettery-dark mb-6"
+                className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 {t("story")}
               </h2>
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+              <p className="text-gray-500 text-base sm:text-lg leading-relaxed">
                 {t("storyText")}
               </p>
             </motion.div>
@@ -90,7 +115,7 @@ export function AboutPage() {
       </section>
 
       {/* Mission */}
-      <section className="py-12 lg:py-20 px-4 sm:px-6 lg:px-8 bg-[#f0fdf4]">
+      <section className="py-12 lg:py-20 px-4 sm:px-6 lg:px-8 bg-gray-50">
         <div className="mx-auto max-w-7xl">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 lg:gap-16 items-center">
             <motion.div
@@ -100,12 +125,12 @@ export function AboutPage() {
               className="order-2 lg:order-1"
             >
               <h2
-                className="text-3xl sm:text-4xl font-bold text-bettery-dark mb-6"
+                className="text-3xl sm:text-4xl font-bold text-gray-900 mb-6"
                 style={{ fontFamily: "var(--font-heading)" }}
               >
                 {t("mission")}
               </h2>
-              <p className="text-gray-600 text-base sm:text-lg leading-relaxed">
+              <p className="text-gray-500 text-base sm:text-lg leading-relaxed">
                 {t("missionText")}
               </p>
             </motion.div>
@@ -113,7 +138,7 @@ export function AboutPage() {
               initial={{ opacity: 0, x: 40 }}
               whileInView={{ opacity: 1, x: 0 }}
               viewport={{ once: true }}
-              className="relative h-80 sm:h-96 lg:h-125 rounded-3xl overflow-hidden order-1 lg:order-2"
+              className="relative h-80 sm:h-96 lg:h-[500px] rounded-3xl overflow-hidden order-1 lg:order-2"
             >
               <Image
                 src="https://images.unsplash.com/photo-1466637574441-749b8f19452f?w=800&h=600&fit=crop"
@@ -133,7 +158,7 @@ export function AboutPage() {
             initial={{ opacity: 0, y: 20 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
-            className="text-3xl sm:text-4xl font-bold text-bettery-dark text-center mb-12"
+            className="text-3xl sm:text-4xl font-bold text-gray-900 text-center mb-12"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t("values")}
@@ -146,7 +171,6 @@ export function AboutPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.15 }}
-                whileHover={{ y: -5 }}
                 className="bg-white rounded-2xl p-8 text-center shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100"
               >
                 <div className={`inline-flex p-4 rounded-2xl ${value.color} mb-5`}>

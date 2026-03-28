@@ -30,10 +30,12 @@ export function CartPage() {
   useEffect(() => setMounted(true), []);
 
   const formatPrice = (price: number) =>
-    new Intl.NumberFormat("ru-RU").format(price);
+    new Intl.NumberFormat("uz-UZ").format(price);
 
   const getName = (item: (typeof items)[0]) =>
     locale === "en" ? item.nameEn : locale === "uz" ? item.nameUz : item.name;
+
+  const currency = locale === "en" ? "sum" : locale === "uz" ? "so'm" : "сум";
 
   const handlePlaceOrder = (e: React.FormEvent) => {
     e.preventDefault();
@@ -45,7 +47,7 @@ export function CartPage() {
 
   if (orderPlaced) {
     return (
-      <div className="pt-20 lg:pt-24 min-h-screen flex items-center justify-center px-4">
+      <div className="pt-24 lg:pt-28 min-h-screen flex items-center justify-center px-4">
         <motion.div
           initial={{ opacity: 0, scale: 0.9 }}
           animate={{ opacity: 1, scale: 1 }}
@@ -53,14 +55,14 @@ export function CartPage() {
         >
           <CheckCircle className="h-20 w-20 text-bettery-green mx-auto mb-6" />
           <h1
-            className="text-3xl font-bold text-bettery-dark mb-3"
+            className="text-3xl font-bold text-gray-900 mb-3"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t("orderSuccess")}
           </h1>
           <p className="text-gray-500 mb-8">{t("orderSuccessDescription")}</p>
           <Link href="/">
-            <Button className="bg-bettery-green hover:bg-[#2ab858] text-white rounded-full px-8 py-5">
+            <Button className="bg-bettery-green hover:bg-bettery-green/90 text-white rounded-full px-8 py-5">
               {t("goToMenu")}
             </Button>
           </Link>
@@ -71,12 +73,12 @@ export function CartPage() {
 
   return (
     <div className="pt-20 lg:pt-24 min-h-screen">
-      <section className="bg-bettery-dark py-10 lg:py-14">
+      <section className="bg-gray-50 py-10 lg:py-14">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-5xl font-bold text-white"
+            className="text-4xl sm:text-5xl font-bold text-gray-900"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t("title")}
@@ -92,13 +94,13 @@ export function CartPage() {
               animate={{ opacity: 1 }}
               className="text-center py-20"
             >
-              <ShoppingCart className="h-20 w-20 text-gray-300 mx-auto mb-6" />
-              <h2 className="text-2xl font-semibold text-gray-400 mb-2">
+              <ShoppingCart className="h-20 w-20 text-gray-200 mx-auto mb-6" />
+              <h2 className="text-2xl font-semibold text-gray-300 mb-2">
                 {t("empty")}
               </h2>
               <p className="text-gray-400 mb-8">{t("emptyDescription")}</p>
               <Link href="/menu">
-                <Button className="bg-bettery-green hover:bg-[#2ab858] text-white rounded-full px-8 py-5">
+                <Button className="bg-bettery-green hover:bg-bettery-green/90 text-white rounded-full px-8 py-5">
                   {t("goToMenu")}
                 </Button>
               </Link>
@@ -142,14 +144,12 @@ export function CartPage() {
                           {getName(item)}
                         </h3>
                         <p className="text-bettery-green font-bold mt-1">
-                          {formatPrice(item.price)} сум
+                          {formatPrice(item.price)} {currency}
                         </p>
                         <div className="flex items-center justify-between mt-3">
                           <div className="flex items-center gap-3">
                             <button
-                              onClick={() =>
-                                updateQuantity(item.id, item.quantity - 1)
-                              }
+                              onClick={() => updateQuantity(item.id, item.quantity - 1)}
                               className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
                             >
                               <Minus className="h-4 w-4" />
@@ -158,17 +158,15 @@ export function CartPage() {
                               {item.quantity}
                             </span>
                             <button
-                              onClick={() =>
-                                updateQuantity(item.id, item.quantity + 1)
-                              }
+                              onClick={() => updateQuantity(item.id, item.quantity + 1)}
                               className="w-8 h-8 rounded-full bg-gray-100 flex items-center justify-center hover:bg-gray-200 transition-colors"
                             >
                               <Plus className="h-4 w-4" />
                             </button>
                           </div>
                           <div className="flex items-center gap-3">
-                            <span className="font-bold text-bettery-dark">
-                              {formatPrice(item.price * item.quantity)} сум
+                            <span className="font-bold text-gray-900">
+                              {formatPrice(item.price * item.quantity)} {currency}
                             </span>
                             <button
                               onClick={() => removeItem(item.id)}
@@ -193,13 +191,13 @@ export function CartPage() {
                         <span className="text-gray-600 font-medium">
                           {t("total")}:
                         </span>
-                        <span className="text-2xl font-bold text-bettery-dark">
-                          {formatPrice(getTotalPrice())} сум
+                        <span className="text-2xl font-bold text-gray-900">
+                          {formatPrice(getTotalPrice())} {currency}
                         </span>
                       </div>
                       <Button
                         onClick={() => setShowCheckout(true)}
-                        className="w-full bg-bettery-green hover:bg-[#2ab858] text-white rounded-xl py-6 text-base font-semibold"
+                        className="w-full bg-bettery-green hover:bg-bettery-green/90 text-white rounded-xl py-6 text-base font-semibold"
                       >
                         {t("checkout")}
                       </Button>
@@ -214,9 +212,7 @@ export function CartPage() {
                           type="text"
                           required
                           value={formData.name}
-                          onChange={(e) =>
-                            setFormData({ ...formData, name: e.target.value })
-                          }
+                          onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-bettery-green focus:ring-1 focus:ring-bettery-green outline-none transition-colors"
                         />
                       </div>
@@ -228,9 +224,7 @@ export function CartPage() {
                           type="tel"
                           required
                           value={formData.phone}
-                          onChange={(e) =>
-                            setFormData({ ...formData, phone: e.target.value })
-                          }
+                          onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
                           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-bettery-green focus:ring-1 focus:ring-bettery-green outline-none transition-colors"
                         />
                       </div>
@@ -242,12 +236,7 @@ export function CartPage() {
                           type="text"
                           required
                           value={formData.address}
-                          onChange={(e) =>
-                            setFormData({
-                              ...formData,
-                              address: e.target.value,
-                            })
-                          }
+                          onChange={(e) => setFormData({ ...formData, address: e.target.value })}
                           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-bettery-green focus:ring-1 focus:ring-bettery-green outline-none transition-colors"
                         />
                       </div>
@@ -257,12 +246,7 @@ export function CartPage() {
                         </label>
                         <textarea
                           value={formData.comment}
-                          onChange={(e) =>
-                            setFormData({
-                              ...formData,
-                              comment: e.target.value,
-                            })
-                          }
+                          onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
                           rows={3}
                           className="w-full px-4 py-3 rounded-xl border border-gray-200 focus:border-bettery-green focus:ring-1 focus:ring-bettery-green outline-none transition-colors resize-none"
                         />
@@ -271,13 +255,13 @@ export function CartPage() {
                         <span className="text-gray-600 font-medium">
                           {t("total")}:
                         </span>
-                        <span className="text-xl font-bold text-bettery-dark">
-                          {formatPrice(getTotalPrice())} сум
+                        <span className="text-xl font-bold text-gray-900">
+                          {formatPrice(getTotalPrice())} {currency}
                         </span>
                       </div>
                       <Button
                         type="submit"
-                        className="w-full bg-bettery-green hover:bg-[#2ab858] text-white rounded-xl py-6 text-base font-semibold"
+                        className="w-full bg-bettery-green hover:bg-bettery-green/90 text-white rounded-xl py-6 text-base font-semibold"
                       >
                         {t("placeOrder")}
                       </Button>

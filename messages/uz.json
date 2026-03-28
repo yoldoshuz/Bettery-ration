@@ -6,7 +6,9 @@
     "recipes": "Retseptlar",
     "contact": "Aloqa",
     "cart": "Savat",
-    "language": "Til"
+    "language": "Til",
+    "phone": "+998 71 200 00 01",
+    "order": "Buyurtma berish"
   },
   "brands": {
     "title": "Kompaniyalar oilasi",
@@ -18,78 +20,160 @@
     "betteryRation": "Bettery Ration"
   },
   "hero": {
-    "title": "Har bir tarelkada sog'lom energiya zaryadi",
-    "subtitle": "Yangi, muvozanatli taomlar sizning stolingizga yetkazib beriladi. Ortiqcha harakatlarsiz to'g'ri ovqatlaning.",
+    "title": "Sog'lom ovqatlanish — oson va mazali",
+    "subtitle": "Toshkentda uyingizgacha yetkazib beramiz. Siz faqat tanlang — biz tayyorlaymiz!",
     "cta": "Menyuni ko'rish",
-    "badge": "Sog'lom ovqatlanish"
+    "badge": "Toshkentda #1 sog'lom ovqat yetkazish"
   },
-  "promo": {
-    "title": "Istaklaringizni qondiring, byudjetingizni saqlang!",
-    "description": "Ortiqcha xarajatlarsiz sevimli taomlaringizdan bahramand bo'ling. Byudjetingizni tartibda saqlab, mazali taomlar bilan o'zingizni erkalang.",
-    "cta": "Maxsus takliflarni ko'rish"
+  "benefits": {
+    "lightness": {
+      "title": "Yengillik",
+      "desc": "Siz o'zingizni yengil va baquvvat his qilasiz"
+    },
+    "freedom": {
+      "title": "Erkinlik",
+      "desc": "Ovqat tayyorlash va xarid qilish haqida o'ylamang"
+    },
+    "calm": {
+      "title": "Xotirjamlik",
+      "desc": "Kaloriyalarni hisoblash va dieta tuzish biz zimmasida"
+    },
+    "pleasure": {
+      "title": "Zavq",
+      "desc": "Har kuni yangi mazali va foydali taomlar"
+    }
   },
-  "menus": {
-    "title": "Bizning sog'lom menyu",
-    "subtitle": "Ehtiyotkorlik bilan tayyorlangan taomlarimizni kashf eting",
-    "viewAll": "Hammasini ko'rish"
+  "plans": {
+    "title": "Menyuni tanlang",
+    "subtitle": "Maqsadingizga mos ratsionni tanlang",
+    "active": "Faol hayot tarzi va shakl saqlash uchun",
+    "perDay": "kuniga",
+    "from": "dan",
+    "kcal": "Kkal",
+    "days": "kun",
+    "meals": "taom",
+    "proteins": "Oqsillar",
+    "fats": "Yog'lar",
+    "carbs": "Uglevodlar",
+    "orderPlan": "Buyurtma berish"
   },
-  "featured": {
-    "title": "Avokado va aralash salat bilan losos",
-    "description": "Mukammal sog'lom tushlik uchun avokado va yangi salat aralashmasi bilan tayyorlangan yangi losos.",
-    "orderNow": "Hozir buyurtma bering",
-    "badge": "Avokado"
+  "pricing": {
+    "title": "Bettery Ration'ni qulay narxda buyurtma qiling",
+    "subtitle": "Ko'proq buyurtma bering — ko'proq tejang",
+    "trialTitle": "Sinov muddati",
+    "trialDesc": "3 kun — birinchi marta sinab ko'ring",
+    "weekTitle": "Haftalik",
+    "weekDesc": "6 kun — eng mashhur variant",
+    "monthTitle": "Oylik",
+    "monthDesc": "24 kun — eng foydali narx",
+    "pricePerDay": "kuniga",
+    "totalPrice": "Jami",
+    "sum": "so'm",
+    "savings": "tejaysiz",
+    "freeDelivery": "Bepul yetkazib berish",
+    "orderNow": "Hozir buyurtma berish",
+    "popular": "Mashhur"
   },
-  "categories": {
-    "title": "Eng yaxshi kategoriyalar",
-    "subtitle": "Bizda bor",
-    "all": "Hammasi",
-    "popular": "Mashhur",
-    "lowCalorie": "Kam kaloriyali",
-    "seeRecipe": "Retseptni ko'rish"
+  "results": {
+    "title": "Bettery Ration — haqiqiy natija haqida",
+    "subtitle": "10 000 dan ortiq mijozlar o'z maqsadlariga erishdi",
+    "months": "oy",
+    "startWeight": "Boshlang'ich vazn",
+    "endWeight": "Hozirgi vazn",
+    "program": "Dastur",
+    "lost": "Yo'qotildi",
+    "kg": "kg"
   },
-  "cta": {
-    "title": "Tanangizni ozuqaviy taomlar bilan to'ldiring",
-    "button": "Menyuni ko'rish"
+  "delivery": {
+    "title": "Bepul yetkazib berish",
+    "subtitle": "Toshkent bo'ylab bepul yetkazib beramiz",
+    "description": "Toshkent shahri va uning atrofidagi hududlarga bepul yetkazib berish xizmati mavjud. Buyurtmangizni ertalab soat 7:00 dan 10:00 gacha yetkazib beramiz.",
+    "zones": "Yetkazib berish hududlari",
+    "orderBtn": "Buyurtma berish"
   },
-  "recipes": {
-    "title": "Mashhur sog'lom retseptlar",
-    "daysAgo": "{days} kun oldin",
-    "by": "Muallif: {author}"
+  "faq": {
+    "title": "Ko'p beriladigan savollar",
+    "tabs": {
+      "general": "Umumiy",
+      "ordering": "Buyurtma",
+      "menu": "Menyu",
+      "delivery": "Yetkazish",
+      "payment": "To'lov"
+    },
+    "questions": {
+      "q1": "Bettery Ration nima?",
+      "a1": "Bettery Ration — bu Toshkentda sog'lom ovqatlanish xizmati. Biz sizning maqsadlaringizga mos keladigan tayyor taomlarni har kuni uyingizgacha yetkazib beramiz.",
+      "q2": "Qanday ratsionlar mavjud?",
+      "a2": "Bizda 4 ta asosiy ratsion mavjud: 1000, 1500, 1700 va 2500 Kkal. Har bir ratsion professional dietolog tomonidan tuzilgan.",
+      "q3": "Buyurtmani qanday berishim mumkin?",
+      "a3": "Saytimiz orqali yoki +998 71 200 00 01 raqamiga qo'ng'iroq qilib buyurtma berishingiz mumkin.",
+      "q4": "Yetkazib berish qachon amalga oshiriladi?",
+      "a4": "Buyurtmalar har kuni ertalab soat 7:00 dan 10:00 gacha yetkazib beriladi. Toshkent bo'ylab yetkazib berish bepul.",
+      "q5": "To'lov qanday amalga oshiriladi?",
+      "a5": "Naqd pul, plastik karta (Uzcard, Humo), bank o'tkazmasi yoki Click/Payme orqali to'lashingiz mumkin."
+    }
+  },
+  "quality": {
+    "title": "Sifat va xavfsizlik",
+    "subtitle": "Bettery Ration",
+    "description": "Barcha taomlarimiz HACCP xavfsizlik standartlariga muvofiq tayyorlanadi. Faqat yangi va tabiiy mahsulotlardan foydalanamiz.",
+    "cta": "Batafsil",
+    "cert1": "HACCP sertifikati",
+    "cert2": "Tabiiy mahsulotlar",
+    "cert3": "Kundalik yangi tayyorlash"
+  },
+  "discount": {
+    "title": "Bettery Ration'ni foydali buyurtma qiling!",
+    "subtitle": "Birinchi buyurtmangizga",
+    "percent": "20%",
+    "off": "gacha chegirma",
+    "cta": "Buyurtma berish"
   },
   "footer": {
     "address": "Toshkent sh., Navoiy ko'ch., 123",
-    "phone": "+998 71 123 45 67",
-    "rights": "© 2024 Bettery Ration. Barcha huquqlar himoyalangan.",
+    "phone": "+998 71 200 00 01",
+    "rights": "© 2025 Bettery Ration. Barcha huquqlar himoyalangan.",
     "home": "Bosh sahifa",
     "about": "Biz haqimizda",
     "menu": "Menyu",
     "contact": "Aloqa",
     "help": "Yordam",
     "support": "Qo'llab-quvvatlash",
-    "policies": "Siyosat",
-    "shop": "Do'kon"
+    "policies": "Maxfiylik siyosati",
+    "shop": "Do'kon",
+    "workHours": "Ish vaqti: 08:00 — 22:00",
+    "followUs": "Bizni kuzating"
   },
   "about": {
     "title": "Bettery Ration haqida",
-    "subtitle": "Biz ilhomlantiradigan sog'lom ovqatlanishni yaratamiz",
+    "subtitle": "Toshkentda sog'lom ovqatlanish xizmati",
     "story": "Bizning hikoyamiz",
-    "storyText": "Bettery Ration — hamfikrlar jamoasi tomonidan yaratilgan sog'lom ovqatlanish xizmati. Biz to'g'ri ovqatlanish mazali, arzon va qulay bo'lishi mumkinligiga ishonamiz. Har bir taom professional dietologlar va oshpazlar tomonidan ishlab chiqilgan.",
+    "storyText": "Bettery Ration 2023 yilda Toshkentda tashkil etilgan. Biz sog'lom ovqatlanishni hamma uchun qulay va mazali qilishga intilamiz. Professional oshpazlar va dietologlar jamoamiz har kuni 500 dan ortiq mijozlarga xizmat ko'rsatadi.",
     "mission": "Bizning missiyamiz",
-    "missionText": "Sog'lom ovqatlanishni hamma uchun qulay qilish. Biz faqat yangi, tabiiy ingredientlardan foydalanamiz va sizning sog'lig'ingiz haqida g'amxo'rlik bilan tayyorlaymiz.",
+    "missionText": "O'zbekistonda sog'lom ovqatlanish madaniyatini rivojlantirish. Biz faqat yangi, mahalliy va tabiiy mahsulotlardan foydalanamiz. Har bir taom ehtiyotkorlik bilan tayyorlanadi.",
     "values": "Bizning qadriyatlarimiz",
     "freshness": "Yangilik",
-    "freshnessText": "Har kuni faqat yangi ingredientlar",
+    "freshnessText": "Har kuni faqat yangi mahsulotlardan tayyorlaymiz",
     "quality": "Sifat",
-    "qualityText": "Har bir bosqichda yuqori standartlar",
+    "qualityText": "HACCP standartlariga muvofiq ishlaymiz",
     "care": "G'amxo'rlik",
-    "careText": "Har bir mijozga individual yondashuv"
+    "careText": "Har bir mijozga individual yondashuv",
+    "stats": {
+      "clients": "500+",
+      "clientsLabel": "Kundalik mijozlar",
+      "dishes": "50+",
+      "dishesLabel": "Menyu tarkibida",
+      "experience": "3+",
+      "experienceLabel": "Yillik tajriba"
+    }
   },
   "menuPage": {
     "title": "Bizning menyu",
-    "subtitle": "Sog'lom ovqatlanish uchun taomlarni tanlang",
+    "subtitle": "Sog'lom va mazali taomlarni tanlang",
     "addToCart": "Savatga",
     "added": "Qo'shildi",
     "calories": "kkal",
+    "currency": "so'm",
     "categories": {
       "all": "Hammasi",
       "salads": "Salatlar",
@@ -108,12 +192,22 @@
     "remove": "O'chirish",
     "quantity": "Miqdor",
     "clearAll": "Hammasini tozalash",
-    "orderSuccess": "Buyurtma rasmiylashtirildi!",
-    "orderSuccessDescription": "Buyurtmangiz uchun rahmat. Biz siz bilan tez orada bog'lanamiz.",
-    "name": "Ism",
-    "phone": "Telefon",
+    "orderSuccess": "Buyurtma qabul qilindi!",
+    "orderSuccessDescription": "Rahmat! Operator siz bilan tez orada bog'lanadi.",
+    "name": "Ismingiz",
+    "phone": "Telefon raqamingiz",
     "address": "Yetkazib berish manzili",
-    "comment": "Izoh",
-    "placeOrder": "Buyurtma berish"
+    "comment": "Izoh (ixtiyoriy)",
+    "placeOrder": "Buyurtma berish",
+    "currency": "so'm"
+  },
+  "recipesPage": {
+    "title": "Foydali retseptlar",
+    "subtitle": "Sog'lom ovqatlanish bo'yicha retseptlar to'plami"
+  },
+  "recipes": {
+    "title": "Foydali retseptlar",
+    "daysAgo": "{days} kun oldin",
+    "by": "Muallif: {author}"
   }
 }

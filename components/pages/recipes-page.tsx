@@ -17,21 +17,21 @@ const recipes = [
     descUz: "Yengil sous bilan yangi sabzavotlardan klassik tetiklantiruvchi salat",
     image: "https://images.unsplash.com/photo-1540420773420-3366772f4999?w=600&h=400&fit=crop",
     time: "15 min",
-    author: "Daniel Schefter",
-    category: "Salad",
+    author: "Bettery Chef",
+    category: "Salat",
   },
   {
     id: "2",
     titleRu: "Вегетарианский салат с черри и моцареллой",
-    titleEn: "Vegetarian Salad With Cherry Tomato, Mozzarella And Lettuce",
-    titleUz: "Cherry pomidori, mocarella va salat bilan vegetarian salat",
+    titleEn: "Vegetarian Salad With Cherry Tomato And Mozzarella",
+    titleUz: "Cherry pomidori va mocarella bilan vegetarian salat",
     descRu: "Лёгкий итальянский салат с сочными помидорами черри",
     descEn: "Light Italian salad with juicy cherry tomatoes",
     descUz: "Shirali cherry pomidorlari bilan yengil italyan salati",
     image: "https://images.unsplash.com/photo-1595587870672-c79b47d21b2e?w=600&h=400&fit=crop",
     time: "10 min",
-    author: "Daniel Schefter",
-    category: "Salad",
+    author: "Bettery Chef",
+    category: "Salat",
   },
   {
     id: "3",
@@ -43,8 +43,8 @@ const recipes = [
     descUz: "Yangi losos va avokado bilan ozuqaviy poke-boul",
     image: "https://images.unsplash.com/photo-1546069901-ba9599a7e63c?w=600&h=400&fit=crop",
     time: "20 min",
-    author: "Daniel Schefter",
-    category: "Bowl",
+    author: "Bettery Chef",
+    category: "Boul",
   },
   {
     id: "4",
@@ -56,8 +56,8 @@ const recipes = [
     descUz: "Kinoa va mavsumiy sabzavotlar bilan to'yimli iliq salat",
     image: "https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&h=400&fit=crop",
     time: "25 min",
-    author: "Daniel Schefter",
-    category: "Salad",
+    author: "Bettery Chef",
+    category: "Salat",
   },
   {
     id: "5",
@@ -69,8 +69,8 @@ const recipes = [
     descUz: "Urug'lar bilan pishirilgan oshqovoqdan yumshoq krem-sho'rva",
     image: "https://images.unsplash.com/photo-1476718406336-bb5a9690ee2a?w=600&h=400&fit=crop",
     time: "30 min",
-    author: "Daniel Schefter",
-    category: "Soup",
+    author: "Bettery Chef",
+    category: "Sho'rva",
   },
   {
     id: "6",
@@ -82,13 +82,13 @@ const recipes = [
     descUz: "Granola va yangi rezavorlar bilan yorqin smuzi-boul",
     image: "https://images.unsplash.com/photo-1590301157890-4810ed352733?w=600&h=400&fit=crop",
     time: "10 min",
-    author: "Daniel Schefter",
-    category: "Bowl",
+    author: "Bettery Chef",
+    category: "Boul",
   },
 ];
 
 export function RecipesPage() {
-  const t = useTranslations("recipes");
+  const t = useTranslations("recipesPage");
   const locale = useLocale();
 
   const getTitle = (r: (typeof recipes)[0]) =>
@@ -98,17 +98,25 @@ export function RecipesPage() {
     locale === "en" ? r.descEn : locale === "uz" ? r.descUz : r.descRu;
 
   return (
-    <div className="pt-16">
-      <section className="bg-[#004507] py-12 lg:py-16">
+    <div className="pt-20 lg:pt-24">
+      <section className="bg-gray-50 py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 text-center">
           <motion.h1
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-4xl sm:text-5xl font-bold text-white"
+            className="text-4xl sm:text-5xl font-bold text-gray-900 mb-3"
             style={{ fontFamily: "var(--font-heading)" }}
           >
             {t("title")}
           </motion.h1>
+          <motion.p
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.1 }}
+            className="text-gray-500 text-lg"
+          >
+            {t("subtitle")}
+          </motion.p>
         </div>
       </section>
 
@@ -122,8 +130,8 @@ export function RecipesPage() {
                 whileInView={{ opacity: 1, y: 0 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 }}
-                whileHover={{ y: -5 }}
-                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-all duration-300 border border-gray-100 cursor-pointer"
+                whileHover={{ y: -4 }}
+                className="bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 border border-gray-100 cursor-pointer"
               >
                 <div className="relative h-52">
                   <Image
@@ -132,7 +140,7 @@ export function RecipesPage() {
                     fill
                     className="object-cover"
                   />
-                  <Badge className="absolute top-3 left-3 bg-[#33CC66] text-white border-0">
+                  <Badge className="absolute top-3 left-3 bg-bettery-green text-white border-0">
                     {recipe.category}
                   </Badge>
                 </div>
@@ -140,7 +148,7 @@ export function RecipesPage() {
                   <h3 className="font-semibold text-gray-900 text-lg mb-2 line-clamp-2">
                     {getTitle(recipe)}
                   </h3>
-                  <p className="text-gray-500 text-sm mb-4 line-clamp-2">
+                  <p className="text-gray-400 text-sm mb-4 line-clamp-2">
                     {getDesc(recipe)}
                   </p>
                   <div className="flex items-center gap-4 text-sm text-gray-400">

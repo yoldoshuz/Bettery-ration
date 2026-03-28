@@ -11,7 +11,9 @@
       "Bash(mkdir -p app/[locale]/about)",
       "Bash(mkdir -p app/[locale]/recipes)",
       "Bash(mkdir -p app/[locale]/cart)",
-      "Bash(npx next:*)"
+      "Bash(npx next:*)",
+      "Bash(find /d/bettery-catering -type d -not -path */node_modules* -not -path */.next* -not -path */.git* -not -path */.claude*)",
+      "Bash(npx tsc:*)"
     ]
   }
 }
